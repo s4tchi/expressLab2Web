@@ -1,5 +1,5 @@
 function onClickRegistration() {
-    window.location.href = 'registrationPage.html'
+    window.location.href = 'http://localhost:3000/pages/auth'
 }
 
 function onClickLogin() {
