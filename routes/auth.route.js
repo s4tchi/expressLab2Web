@@ -7,7 +7,6 @@ const router = Router();
 router.post('/register', async(req, res) => {
     try{
         const {login, password, email, favorite} = req.body;
-        console.log(req.body);
         const candidate = await User.findOne({email});
 
         if(candidate){
@@ -20,7 +19,6 @@ router.post('/register', async(req, res) => {
         res.status(200).json({message: "Пользователь зарегистрирован"});
     }
     catch(e){
-        console.log(e.message)
         res.status(500).json({message: e.message});
     }
 });
@@ -33,12 +31,13 @@ router.post('/login', async(req, res) => {
         if(!candidate) return res.status(400).json({message: "Неверный логин или пароль"});
         if(candidate.password != password) return res.status(400).json({message: "Неверный логин или пароль"});
 
-        const token = jwt.sign({userId: candidate._id}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        const token = jwt.sign({userId: candidate.id}, process.env.JWT_SECRET, {expiresIn: '1h'});
         candidate.password = null
 
         res.json({token, candidate});
     }
     catch(e){
+        console.log(e.message)
         res.status(500).json({message: "Что-то пошло не так((("});
     }
 });

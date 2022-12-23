@@ -61,8 +61,17 @@ async function login() {
                 email: login,
                 password,
             }),
-        })
-        localStorage.setItem('token', token)
+        }).then((response => response.json()))
+        .then((data) => localStorage.setItem('token', data.token))
+    }
+    catch(e) {
+        alert(e)
+    }
+}
+
+async function whoAmI() {
+    try {
+
     }
     catch(e) {
         alert(e)
