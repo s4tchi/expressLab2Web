@@ -1,0 +1,66 @@
+<head>
+    <link rel="stylesheet" href="styles/defaultStyles.css">
+    <link rel="stylesheet" href="styles/stateStyles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <img alt="logo" src="img/logo.svg" class="header_logo" onclick="onClickSwitch()"/>
+        <input class="header_search" placeholder="Поиск"/>
+        <div class="header_btns">
+            <button class="header_btn" onclick="onClickLogin()">Войти</button>
+            <button class="header_btn" onclick="onClickRegistration()">Зарегестрироваться</button>
+        </div>
+        <div class="header_user"></div>
+    </header>
+
+    <main>
+        <div class="state_cover">
+            <img src="img/1.jpg" alt="cover" class="cover_img"/>
+        </div>
+        <div class="block32"></div>
+        <h1>Установка корбюратора от ВАЗ на ломбаргини</h1>
+        <div class="block32"></div>
+        <p class="state_text">Смена корбюратора не простое дело особенно, если корбюратор от ВАЗ. Для этого понадобится терпение и твердая уверенность в необходимости совершаемого действия, оно вам надо? Я так же думаю не стоит оно того.
+            Но для тех, кто всё решился опишу процесс ниже.<br/>Это не возможно без изменения самого корбюратора, они же разные, поэтому понадобится болгарка и сварка и конечно же скилл использования этих инструментов))).</p>
+        <div class="block32"></div>
+        <h1>Комментарии</h1>
+        <div class="block32"></div>
+        <div>
+            <input class="comment_input" placeholder="Место для комменитария"/>
+            <button class="comment_btn">Оставить комментарий</button>
+        </div>
+        <div class="list">
+            <div class="list_item">
+                <div class="comment_author"><img src="img/user.png" class="comment_user"/><p class="user_nick">NeAndrew</p></div>
+                <p class="comment_content">Статья интересная, но не содержательная мало фактов и совсем нет иллюстраций, но повторюсь сттья интересная мне понравилось.</p>
+                <div></div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="scripts/auth.js"></script>
+    <script type="text/javascript" src="scripts/menu.js"></script>
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer_text">Приложение разработано студентом (Москаленко Андрем) группы КТбо4-6 в рамках лабораторной работы 1 по Web.</p>
+    </footer>
+
+    <div class="menu" id="menu_1">
+        <h1 class="menu_title">Меню</h1>
+        <a class="menu_link" href="landingPage.html">Главная страница</a>
+        <a class="menu_link" href="profilePage.html">Профиль</a>
+        <a class="menu_link" href="galleryPage.html">Галлерея</a>
+        <a class="menu_link">Выйти</a>
+    </div>
+
+    <div id="modal" onclick="onClickBG()">
+        <div class="modal_auth">
+            <h1>Авторизация</h1>
+            <div class="block32"></div>
+            <input placeholder="Никнэйм"/>
+            <input placeholder="Пароль"/>
+            <div class="block32"></div>
+            <button class="header_btn">Войти</button>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,163 @@
+main {
+    margin-top: 150px !important;
+}
+
+.user_info {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.user_value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #333355;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.main_user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.user_photo {
+    border: #000000 solid 1px;
+    border-radius: 100%;
+    width: 500px;
+    height: 500px;
+}
+
+.states_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.states_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+select {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2px 17px;
+    gap: 10px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+}
+
+.list_item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px 0px 0px;
+    gap: 10px;
+    background: #EEFFEE;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin-top: 20px;
+}
+
+.state_logo {
+    width: 385px;
+    height: 355px;
+    border-right: #000000 solid 1px;
+}
+
+.state_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.state_text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.state_value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333355;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
