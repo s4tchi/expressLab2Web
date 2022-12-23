@@ -44,13 +44,13 @@
     </footer>
 
     <div id="modal" onclick="onClickBG()">
-        <div class="modal_auth">
+        <div class="modal_auth" onclick="event.stopPropagation()">
             <h1>Авторизация</h1>
             <div class="block32"></div>
-            <input placeholder="Никнэйм"/>
-            <input placeholder="Пароль"/>
+            <input placeholder="Никнэйм" id="login"/>
+            <input placeholder="Пароль" id="password"/>
             <div class="block32"></div>
-            <button class="header_btn">Войти</button>
+            <button class="header_btn" onclick="login()">Войти</button>
         </div>
     </div>
 

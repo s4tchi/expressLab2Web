@@ -50,15 +50,15 @@
         <a class="menu_link" href="http://localhost:3000/">Главная страница</a>
         <a class="menu_link" href="http://localhost:3000/profile">Профиль</a>
         <a class="menu_link" href="http://localhost:3000/gallery">Галлерея</a>
-        <a class="menu_link">Выйти</a>
+        <a class="menu_link" onclick="login()">Выйти</a>
     </div>
 
     <div id="modal" onclick="onClickBG()">
-        <div class="modal_auth">
+        <div class="modal_auth" onclick="event.stopPropagation()">
             <h1>Авторизация</h1>
             <div class="block32"></div>
-            <input placeholder="Никнэйм"/>
-            <input placeholder="Пароль"/>
+            <input placeholder="Никнэйм" id="login"/>
+            <input placeholder="Пароль" id="password"/>
             <div class="block32"></div>
             <button class="header_btn">Войти</button>
         </div>

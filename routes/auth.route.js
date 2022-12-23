@@ -6,28 +6,29 @@ const router = Router();
 
 router.post('/register', async(req, res) => {
     try{
-        const {login, password} = req.body;
-        //console.log(req.body);
-        const candidate = await User.findOne({login});
+        const {login, password, email, favorite} = req.body;
+        console.log(req.body);
+        const candidate = await User.findOne({email});
 
         if(candidate){
             return res.status(400).json({message: "Пользователь с таким логином существует!!!"});
         }
 
-        const user = new User({login, password, name: "undefined", second_name: "undefined"});
+        const user = new User({name: login, password, favorite, email});
         await user.save();
 
         res.status(200).json({message: "Пользователь зарегистрирован"});
     }
     catch(e){
-        res.status(500).json({message: "Что-то пошло не так((("});
+        console.log(e.message)
+        res.status(500).json({message: e.message});
     }
 });
 
 router.post('/login', async(req, res) => {
     try{
-        const {login, password} = req.body;
-        const candidate = await User.findOne({login});
+        const {email, password} = req.body;
+        const candidate = await User.findOne({email});
 
         if(!candidate) return res.status(400).json({message: "Неверный логин или пароль"});
         if(candidate.password != password) return res.status(400).json({message: "Неверный логин или пароль"});
