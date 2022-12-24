@@ -1,5 +1,6 @@
 const User = require('../models/user.model'); 
 const jwt = require('jsonwebtoken');
+const { verifyToken } = require('../proxy/auth.proxy');
 const {Router} = require('express');
 
 const router = Router();
@@ -31,7 +32,7 @@ router.post('/login', async(req, res) => {
         if(!candidate) return res.status(400).json({message: "Неверный логин или пароль"});
         if(candidate.password != password) return res.status(400).json({message: "Неверный логин или пароль"});
 
-        const token = jwt.sign({userId: candidate.id}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        const token = jwt.sign({email: candidate.email}, process.env.JWT_SECRET, {expiresIn: '1h'});
         candidate.password = null
 
         res.json({token, candidate});
@@ -41,6 +42,18 @@ router.post('/login', async(req, res) => {
         res.status(500).json({message: "Что-то пошло не так((("});
     }
 });
+
+router.get('/whoAmI', verifyToken, async (req, res) => {
+    try {
+        console.log(req.userEmail)
+        const user = await User.findOne({email: req.userEmail})
+        console.log(user)
+        res.status(200).json({ user })
+    }
+    catch(e) {
+        res.status(500).json({message: "Что-то пошло не так((("});
+    }
+})
 
 
 module.exports = router;

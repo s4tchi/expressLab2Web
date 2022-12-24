@@ -32,7 +32,9 @@ async function onClickReg() {
         const response = await fetch('http://localhost:3000/auth/register', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8'
+                ['Content-Type']: 'application/json',
+                ['charset']: 'utf-8',
+                ['Authorization'] : `Bearer ${localStorage.getItem('token')}`,
             },
             body: JSON.stringify({
                 login,
@@ -55,7 +57,9 @@ async function login() {
         const token = await fetch('http://localhost:3000/auth/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8'
+                ['Content-Type']: 'application/json',
+                ['charset']: 'utf-8',
+                ['Authorization'] : `Bearer ${localStorage.getItem('token')}`,
             },
             body: JSON.stringify({
                 email: login,
@@ -71,9 +75,32 @@ async function login() {
 
 async function whoAmI() {
     try {
-
+        const user = await fetch('http://localhost:3000/auth/whoAmI', {
+            method: 'GET',
+            headers: {
+                ['Content-Type']: 'application/json',
+                ['charset']: 'utf-8',
+                ['Authorization'] : `Bearer ${localStorage.getItem('token')}`,
+            },
+        }).then((response) => response.json())
+        .then((data) => setHeaderUser(data.user))
     }
     catch(e) {
         alert(e)
     }
 }
+
+function setHeaderUser(user) {
+    try {
+        document.getElementById('user_name').textContent = user.name
+        document.getElementById('user_email').textContent = user.email
+
+        document.getElementById('no_authed').style.display = 'none'
+        document.getElementById('authed').style.display = 'block'
+    }
+    catch(e) {
+        alert(e)
+    }
+}
+
+whoAmI()

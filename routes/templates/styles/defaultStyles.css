@@ -183,3 +183,15 @@ footer {
     line-height: 44px;
     color: #FF3D54;
 }
+
+#user_name {
+    font-style: bold;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#user_email {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+}

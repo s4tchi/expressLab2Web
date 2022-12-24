@@ -7,11 +7,14 @@
     <header>
         <img alt="logo" src="http://localhost:3000/img/logo.svg" class="header_logo" onclick="onClickSwitch()"/>
         <input class="header_search" placeholder="Поиск"/>
-        <div class="header_btns">
+        <div class="header_btns" id="no_authed">
             <button class="header_btn" onclick="onClickLogin()">Войти</button>
             <button class="header_btn" onclick="onClickRegistration()">Зарегестрироваться</button>
         </div>
-        <div class="header_user"></div>
+        <div class="header_user" id="authed">
+            <p id="user_name">====</p>
+            <p id="user_email">====</p>
+        </div>
     </header>
 
     <main>
