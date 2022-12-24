@@ -7,24 +7,27 @@
     <header>
         <img alt="logo" src="http://localhost:3000/img/logo.svg" class="header_logo" onclick="onClickSwitch()"/>
         <input class="header_search" placeholder="Поиск"/>
-        <div class="header_btns">
+        <div class="header_btns" id="no_authed">
             <button class="header_btn" onclick="onClickLogin()">Войти</button>
             <button class="header_btn" onclick="onClickRegistration()">Зарегестрироваться</button>
         </div>
-        <div class="header_user"></div>
+        <div class="header_user" id="authed">
+            <p id="user_name">====</p>
+            <p id="user_email">====</p>
+        </div>
     </header>
 
     <main>
         <div class="main_user">
             <img class="user_photo" src="http://localhost:3000/img/user.png"/>
             <div>
-                <p class="user_info">Никнейм: <span class="user_value">NeAndrew</span></p>
+                <p class="user_info">Никнейм: <span class="user_value" id="user_name_p">NeAndrew</span></p>
                 <div class="block32"></div>
-                <p class="user_info">Почта: <span class="user_value">amos@sfedu.ru</span></p>
+                <p class="user_info">Почта: <span class="user_value" id="user_email_p">amos@sfedu.ru</span></p>
                 <div class="block32"></div>
-                <p class="user_info">Любимая марка машины: <span class="user_value">Dewool</span></p>
+                <p class="user_info">Любимая марка машины: <span class="user_value" id="user_favorite_p">Dewool</span></p>
                 <div class="block32"></div>
-                <p class="user_info">Краткая информация: <span class="user_value">студент из Таганрога, автолюбитель)))</span></p>
+                <p class="user_info">Краткая информация: <span class="user_value" id="user_desc_p">студент из Таганрога, автолюбитель)))</span></p>
             </div>
         </div>
         <div class="block32"></div>
@@ -63,6 +66,7 @@
     </main>
     <script type="text/javascript" src="http://localhost:3000/scripts/auth.js"></script>
     <script type="text/javascript" src="http://localhost:3000/scripts/menu.js"></script>
+    <script type="text/javascript" src="http://localhost:3000/scripts/profile.js"></script>
     <!-- FOOTER -->
     <footer>
         <p class="footer_text">Приложение разработано студентом (Москаленко Андрем) группы КТбо4-6 в рамках лабораторной работы 1 по Web.</p>

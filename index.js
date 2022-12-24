@@ -29,6 +29,7 @@ app.use('/scripts', require('./routes/scripts.route'))
 app.use('/img', require('./routes/logos.route'))
 app.use('/v', require('./routes/vi.route'))
 app.use('/auth', require('./routes/auth.route'))
+app.use('/user', require('./routes/user.route'))
 
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}/`)
